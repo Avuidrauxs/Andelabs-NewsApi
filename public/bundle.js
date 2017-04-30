@@ -25510,7 +25510,11 @@
 	var AllNews = React.createClass({
 	  displayName: 'AllNews',
 
-
+	  getInitialState: function getInitialState() {
+	    return {
+	      //sources: 'Nope'
+	    };
+	  },
 	  setNews: function setNews() {
 	    var that = this;
 	    NewsApi.getNews('sport').then(function (sources) {
@@ -25531,7 +25535,12 @@
 	        null,
 	        'All News'
 	      ),
-	      this.state.sources
+	      this.setNews(),
+	      React.createElement(
+	        'p',
+	        null,
+	        this.state.sources
+	      )
 	    );
 	  }
 	});
@@ -25557,7 +25566,7 @@
 	      if (res.data.status === 'ok' && res.data.sources === []) {
 	        throw new Error('Error no news');
 	      } else {
-	        return res.data.sources[0].id;
+	        return res.data.sources[0];
 	      }
 	    }, function (res) {
 	      throw new Error('Error no news');
