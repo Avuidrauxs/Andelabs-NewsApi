@@ -55,10 +55,10 @@
 	    IndexRoute = _require.IndexRoute,
 	    hashHistory = _require.hashHistory;
 
-	var Main = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Main\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	var AllNews = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"AllNews\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	var TechNews = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"TechNews\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	var WorldNews = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"WorldNews\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var Main = __webpack_require__(222);
+	var AllNews = __webpack_require__(224);
+	var TechNews = __webpack_require__(225);
+	var WorldNews = __webpack_require__(226);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -67,8 +67,8 @@
 	    Route,
 	    { path: '/', component: Main },
 	    React.createElement(IndexRoute, { component: AllNews }),
-	    React.createElement(Route, { path: 'about', component: TechNews }),
-	    React.createElement(Route, { path: 'examples', component: WorldNews })
+	    React.createElement(Route, { path: 'tech', component: TechNews }),
+	    React.createElement(Route, { path: 'world', component: WorldNews })
 	  )
 	), document.getElementById('app'));
 
@@ -25421,6 +25421,147 @@
 
 	exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 	module.exports = exports['default'];
+
+/***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var Nav = __webpack_require__(223);
+
+	var Main = React.createClass({
+	  displayName: 'Main',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(Nav, null),
+	      React.createElement(
+	        'h1',
+	        null,
+	        'Main Component'
+	      ),
+	      this.props.children
+	    );
+	  }
+
+	});
+
+	module.exports = Main;
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var _require = __webpack_require__(159),
+	    Link = _require.Link,
+	    IndexLink = _require.IndexLink;
+
+	var Nav = React.createClass({
+	  displayName: 'Nav',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h2',
+	        null,
+	        'Nav Component'
+	      ),
+	      React.createElement(
+	        IndexLink,
+	        { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	        'All News'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: 'tech', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	        'Tech News'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: 'world', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	        'World News'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Nav;
+
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var AllNews = React.createClass({
+	  displayName: 'AllNews',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h1',
+	      null,
+	      'All News'
+	    );
+	  }
+	});
+
+	module.exports = AllNews;
+
+/***/ }),
+/* 225 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var TechNews = React.createClass({
+	  displayName: 'TechNews',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'Tech News'
+	    );
+	  }
+	});
+
+	module.exports = TechNews;
+
+/***/ }),
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var WorldNews = React.createClass({
+	  displayName: 'WorldNews',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'World News'
+	    );
+	  }
+	});
+
+	module.exports = WorldNews;
 
 /***/ })
 /******/ ]);

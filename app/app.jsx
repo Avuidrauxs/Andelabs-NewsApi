@@ -11,8 +11,8 @@ ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={AllNews}/>
-      <Route path="about" component={TechNews}/>
-      <Route path="examples" component={WorldNews}/>
+      <Route path="tech" component={TechNews}/>
+      <Route path="world" component={WorldNews}/>
 
     </Route>
   </Router>,
