@@ -11,7 +11,8 @@ module.exports = {
       Nav: 'app/components/Nav.jsx',
       AllNews: 'app/components/AllNews.jsx',
       TechNews: 'app/components/TechNews.jsx',
-      WorldNews: 'app/components/WorldNews.jsx'
+      WorldNews: 'app/components/WorldNews.jsx',
+      NewsApi: 'app/api/NewsApi.js'
     },
     extensions: ['', '.js', '.jsx']
   },
